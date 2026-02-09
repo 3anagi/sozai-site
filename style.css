@@ -1,0 +1,309 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.site-title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+}
+
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* カードの見た目（例） */
+.card {
+  cursor: pointer;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain; /* 余白ありで全体表示したやつ */
+  background: #f3f3f3;
+}
+
+.card h2 {
+  font-size: 16px;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* 詳細ページ */
+.detail-img {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #f5f5f5;
+  margin-bottom: 16px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+.download-btn:hover {
+  background: #555;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+
+.detail-layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+
+.detail-left {
+  flex: 0 0 45%;
+}
+
+.detail-right {
+  flex: 1;
+}
+
+/* サムネ */
+.detail-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #f5f5f5;
+}
+
+/* 説明文 */
+.detail-description {
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+
+
+
+.detail-left {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #f3f3f3;
+  border-radius: 12px;
+}
+
+
+.detail-right h1 {
+  margin-top: 0;
+}
+
+.download-btn {
+  display: inline-block;
+  margin: 16px 0 24px;
+}
+
+
+
+.layout {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.ad-side {
+  width: 160px;
+  margin: 0 10px;
+}
+
+/* スマホでは左右広告を消す */
+@media (max-width: 768px) {
+  .ad-side {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-img {
+    max-width: 100%;
+  }
+}
+
+
+/* タブレット */
+@media (max-width: 1024px) {
+  .card-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 24px 16px;
+  border-top: 1px solid #eee;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+.footer-ad {
+  max-width: 1000px;
+  margin: 40px auto 20px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* 広告が浮かないように */
+.footer-ad ins {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.detail-bottom-ad {
+  max-width: 1000px;
+  margin: 48px auto 24px;
+  padding: 16px;
+  text-align: center;
+}
+
+.detail-bottom-ad ins {
+  display: block;
+  margin: 0 auto;
+}
+
+
+.detail-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.detail-nav a {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+}
+
+.detail-nav a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .detail-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+.detail-nav a:not(:last-child)::after {
+  content: "|";
+  margin-left: 16px;
+  color: #ccc;
+}
+
+
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form iframe {
+  width: 100%;
+  height: 1200px; /* ← ここがポイント */
+  border: none;
+  overflow: hidden;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 28px;
+}

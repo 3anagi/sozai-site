@@ -27,6 +27,13 @@ if (!item) {
       </div>
     </div>
   `;
-
-
 }
+
+const downloadBtn = document.querySelector(".download-btn");
+
+downloadBtn.addEventListener("click", () => {
+  gtag("event", "download", {
+    item_id: item.id,
+    item_name: item.title
+  });
+});

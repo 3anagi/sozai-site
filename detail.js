@@ -37,3 +37,14 @@ downloadBtn.addEventListener("click", () => {
     item_name: item.title
   });
 });
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest(".download-btn");
+  if (!link) return;
+
+  // Google Analytics に送信
+  gtag("event", "download", {
+    event_category: "material",
+    event_label: link.getAttribute("href"),
+  });
+});
